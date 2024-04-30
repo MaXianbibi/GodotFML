@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://b75iv36gtut2q"]
+
+[ext_resource type="Script" path="res://Scene/NPC/NPC.gd" id="1_qcsh2"]
+[ext_resource type="Texture2D" uid="uid://dqbsjldpmvo76" path="res://Scene/Player/Player.png" id="2_u6ahi"]
+[ext_resource type="Script" path="res://Components/InteractWithMouseComponent/InteractWithMouseComponent.gd" id="3_v76m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa2ss"]
+atlas = ExtResource("2_u6ahi")
+region = Rect2(864, 96, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fing3"]
+atlas = ExtResource("2_u6ahi")
+region = Rect2(912, 96, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s8vy"]
+atlas = ExtResource("2_u6ahi")
+region = Rect2(960, 96, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd72c"]
+atlas = ExtResource("2_u6ahi")
+region = Rect2(1008, 96, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uykh"]
+atlas = ExtResource("2_u6ahi")
+region = Rect2(1056, 96, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnk3l"]
+atlas = ExtResource("2_u6ahi")
+region = Rect2(1104, 96, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_be87i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa2ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fing3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s8vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd72c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uykh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnk3l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qghbd"]
+radius = 23.0217
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxnyh"]
+radius = 21.0
+height = 70.0
+
+[node name="Npc" type="CharacterBody2D" groups=["NPC"]]
+script = ExtResource("1_qcsh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_be87i")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 32)
+shape = SubResource("CircleShape2D_qghbd")
+
+[node name="InteractWithMouseComponent" type="Area2D" parent="."]
+script = ExtResource("3_v76m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithMouseComponent"]
+position = Vector2(-13, 10)
+shape = SubResource("CapsuleShape2D_vxnyh")

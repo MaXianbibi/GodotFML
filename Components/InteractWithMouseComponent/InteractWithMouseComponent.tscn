@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jur8n1jse6ln"]
+
+[ext_resource type="Script" path="res://Components/InteractWithMouseComponent/InteractWithMouseComponent.gd" id="1_hb8hh"]
+
+[node name="InteractWithMouseComponent" type="Area2D"]
+script = ExtResource("1_hb8hh")

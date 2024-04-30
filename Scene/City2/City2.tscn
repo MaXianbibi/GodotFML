@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjid0piyg5p3t"]
+
+[ext_resource type="Texture2D" uid="uid://coer682sb34ff" path="res://Scene/City2/10_Vehicles_16x16.png" id="1_koj4b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7tgi"]
+texture = ExtResource("1_koj4b")
+20:51/size_in_atlas = Vector2i(6, 4)
+20:51/0 = 0
+20:51/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+20:51/0/physics_layer_0/angular_velocity = 0.0
+20:51/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -0.5, 44, -2, 42, 20.5, 29.5, 23, 25.5, 28, 17.5, 29, 11, 23.5, -7, 22, -18, 22, -23, 27.5, -29.5, 29, -37, 27, -42, 22)
+
+[sub_resource type="TileSet" id="TileSet_aks1u"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_q7tgi")
+
+[node name="City2" type="TileMap"]
+tile_set = SubResource("TileSet_aks1u")
+format = 2
+layer_0/name = "Object"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-65536, 1310720, 51)
