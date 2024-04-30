@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbf4agq5635at"]
+
+[ext_resource type="Script" path="res://Components/TeleportePlayer.gd" id="1_pjf5h"]
+
+[node name="TeleportePlayer" type="Node"]
+script = ExtResource("1_pjf5h")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

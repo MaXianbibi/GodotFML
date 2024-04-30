@@ -11,9 +11,10 @@
 y_sort_enabled = true
 script = ExtResource("1_ys2s3")
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-zoom = Vector2(2, 2)
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["Camera"]]
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+rotation_smoothing_speed = 2.0
 script = ExtResource("3_ws7fa")
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
@@ -26,12 +27,13 @@ offset_right = 918.0
 offset_bottom = 545.0
 
 [node name="Player" parent="." instance=ExtResource("1_ifnd4")]
-position = Vector2(101, -52)
-scale = Vector2(0.5, 0.5)
+position = Vector2(177, 712)
+scale = Vector2(0.25, 0.25)
+speed = 175
 
 [node name="Npc" parent="." groups=["Entities"] instance=ExtResource("3_f2muo")]
 position = Vector2(682, 168)
 scale = Vector2(0.5, 0.5)
 npc_name = "Marc"
 
-[node name="City2" parent="." instance=ExtResource("7_3iauw")]
+[node name="City2" parent="." groups=["City"] instance=ExtResource("7_3iauw")]
