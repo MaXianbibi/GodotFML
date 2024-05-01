@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf1og04fposs5"]
+
+[ext_resource type="Texture2D" uid="uid://clo3n0h0lqn54" path="res://Scene/Dialogue/Modern_UI_Style_1_48x48.png" id="1_xkplo"]
+
+[node name="NewDialogue" type="TextEdit"]
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.693
+anchor_right = 0.208021
+anchor_bottom = 0.917
+offset_left = -0.280006
+offset_top = -0.440002
+offset_right = -0.400024
+offset_bottom = -0.360046
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00190132
+anchor_top = 0.185917
+anchor_right = 0.997575
+anchor_bottom = 0.992132
+offset_left = 0.36496
+offset_top = 0.00800323
+offset_right = -0.190063
+offset_bottom = -0.0960083
+texture = ExtResource("1_xkplo")
+patch_margin_left = 18
+patch_margin_top = 21
+patch_margin_right = 18
+patch_margin_bottom = 18
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true

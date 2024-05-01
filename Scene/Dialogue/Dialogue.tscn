@@ -1,70 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://pimyjaqg1fjr"]
+[gd_scene load_steps=9 format=3 uid="uid://pimyjaqg1fjr"]
 
 [ext_resource type="Script" path="res://Scene/Dialogue/Dialogue.gd" id="1_o18op"]
+[ext_resource type="Texture2D" uid="uid://clo3n0h0lqn54" path="res://Scene/Dialogue/Modern_UI_Style_1_48x48.png" id="2_a84kc"]
 [ext_resource type="FontFile" uid="uid://bpuouaj10mkly" path="res://Fonts/Lugrasimo-Regular.ttf" id="2_c5k7i"]
 
-[node name="Dialogue" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yfkk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eak7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgli5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgnrv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2ew6"]
+
+[node name="Dialogue" type="MarginContainer"]
 texture_filter = 3
-clip_contents = true
-layout_mode = 3
-anchor_top = 0.762
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 85.04
-offset_right = 14.0
-offset_bottom = 84.0
+anchors_preset = -1
+anchor_left = 0.408
+anchor_top = 0.777
+anchor_right = 0.717458
+anchor_bottom = 0.948
+offset_left = -170.36
+offset_top = -3.16003
+offset_right = -169.52
+offset_bottom = -2.84009
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 0
 script = ExtResource("1_o18op")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1982.0
-offset_bottom = 167.0
-color = Color(0.196078, 0.305882, 0.486275, 0.713726)
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_a84kc")
+patch_margin_left = 18
+patch_margin_top = 21
+patch_margin_right = 18
+patch_margin_bottom = 18
+metadata/_edit_use_anchors_ = true
 
-[node name="ChatBox" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.211
-anchor_top = 0.062
-anchor_right = 0.989
-anchor_bottom = 0.395
-offset_left = 0.714966
-offset_top = 0.127999
-offset_right = -27.7151
-offset_bottom = -0.120003
-theme_override_font_sizes/normal_font_size = 20
-text = "Can i help you ?"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+metadata/_edit_use_anchors_ = true
 
-[node name="Person" type="Label" parent="."]
-texture_filter = 4
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.009
-anchor_top = 0.059
-anchor_right = 0.109
-anchor_bottom = 0.288
-offset_left = -9.368
-offset_top = -7.027
-offset_right = 0.431992
-offset_bottom = -0.064003
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_c5k7i")
-theme_override_font_sizes/font_size = 95
-text = "Yeezy : "
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.926
-anchor_top = -0.016
-anchor_right = 1.0
-anchor_bottom = 0.172
-offset_left = 63.1899
-offset_top = 0.0960002
-offset_right = -3.0
-offset_bottom = -0.0320015
-text = "x"
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4yfkk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eak7s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mgli5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tgnrv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g2ew6")
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Button" to="." method="_on_button_button_up"]

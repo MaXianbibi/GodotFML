@@ -1,11 +1,10 @@
 extends Control
 class_name Dialogue
 
-@onready var person_label : Label = $Person
+#@onready var person_label : Label = $Person
 
 var person_name : String = "":
 	set(value):
-		person_label.text = value
 		person_name = value
 
 

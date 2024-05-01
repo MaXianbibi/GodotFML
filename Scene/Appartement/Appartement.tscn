@@ -468,6 +468,7 @@ sources/1 = SubResource("TileSetAtlasSource_le3vt")
 sources/2 = SubResource("TileSetAtlasSource_q2oep")
 
 [node name="Appartement" type="TileMap"]
+position = Vector2(16, 0)
 tile_set = SubResource("TileSet_n7we4")
 format = 2
 layer_0/name = "Wall"

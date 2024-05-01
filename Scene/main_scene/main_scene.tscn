@@ -12,7 +12,7 @@ y_sort_enabled = true
 script = ExtResource("1_ys2s3")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["Camera"]]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.58, 2.58)
 position_smoothing_enabled = true
 rotation_smoothing_speed = 2.0
 script = ExtResource("3_ws7fa")
